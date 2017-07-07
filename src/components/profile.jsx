@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
-import RepoList from './RepoList.jsx'
+import RepoList from './RepoList.jsx';
+import Chips from './Chips.jsx';
 
 class Profile extends Component{
 	render(){
@@ -30,34 +31,30 @@ class Profile extends Component{
 			</div>
 			</div>
 			</div>
-			<div className="card-action blue">
-			<a href={this.props.userData.html_url} target='_blank'>Visit Profile</a>
+			<div className="card-action purple darken-4">
+			<a href={this.props.userData.html_url} target='_blank'>Git Hub</a>
 			</div>
 			</div>
 			</div>
-			<div className="col s5">
 
-			<nav className="white lighten-3">
-			<div className="nav-wrapper">
-			<ul id="nav-mobile" className="">
-			<li><a href="#"><span className="new badge  yellow accent-4" data-badge-caption="Followers">{this.props.userData.followers}</span></a></li>
-			<li><a href="#"><span className="new badge green" data-badge-caption="Following">{this.props.userData.following}</span></a></li>
-			<li><a href="#"><span className="new badge deep-orange darken-3" data-badge-caption="Gists">{this.props.userData.public_gists}</span></a></li>
-			<li><a href="#"><span className="new badge blue" data-badge-caption="Repos">{this.props.userData.public_repos}</span></a></li>
-			</ul>
-			</div>
-			</nav>
-   			</div>
+
+		<div className="col s8">
+			<div className="row">
+				<Chips item='Followers' itemCount = {this.props.userData.followers} colorPalete="chip red darken-2"/>
+				<Chips item='Following' itemCount = {this.props.userData.following} colorPalete="chip green darken-1"/>
+				<Chips item='Gists' itemCount = {this.props.userData.public_gists} colorPalete="chip blue darken-1"/>
+				<Chips item='Repos' itemCount = {this.props.userData.public_repos} colorPalete="chip orange darken-2"/>
+			</div>	
+   		</div>
+
+
+
    			
-   			<div className="row"> 
-					<RepoList userRepos = {this.props.userRepos}/>	
-   			</div>
+   		<div className="col s8"> 
+			<RepoList userRepos = {this.props.userRepos}/>	
+   		</div>
    			
-			</div>
-
-
-			
-			)
+	</div>)
 	}
 }
 

@@ -11,7 +11,7 @@
 				"userName": 'adityavikramdv',
 				"userData":[],
 				"userRepos":[],
-				"perPage": 10
+				"perPage": 5
 
 			};
 		}
@@ -61,7 +61,7 @@
 		}
 		render(){
 			return (
-				<div>
+				<div className="container">
 					<FindBar onUserSearch = {this.onUserSearch.bind(this)}/>
 					<Profile {...this.state} />	
 				</div>)

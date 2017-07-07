@@ -10,32 +10,23 @@ class FindBar extends Component{
 		}
 		
 		this.props.onUserSearch(user);
-		console.log(user);
 		this.refs.userInput.value = "";
 	}
 
 	render(){
-		return(<div>
-			<nav className="blue darken-4">
-					<div className="nav-wrapper">
-					
-					
-    <form className="col m10 white black-text">
-          <div className="input-field" >
-          <i className="material-icons prefix">account_circle</i>
-          <input id="icon_prefix" ref="userInput" type="text" placeholder="User Name" className="validate" />
-          </div>
-        
-      
-    </form>
-  
-					<ul className="right">
-					<li onClick={this.onSearch.bind(this)}><a href="#"><i className="material-icons">search</i></a></li>
-					<li><a href="#"><i className="material-icons">refresh</i></a></li>
-					</ul>
-					</div>
-					</nav>
-		</div>)
+		return(
+		<div className="row">
+				<div className="col s1">
+					<img className="responsive-img" src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-128.png" />
+				</div>
+
+				<div className="col s8">
+				<form onSubmit={this.onSearch.bind(this)}>
+					<input id="icon_prefix" ref="userInput" type="text" placeholder="Search User Name" />
+				</form>
+				</div>
+			</div>
+			)
 	}
 }
 
